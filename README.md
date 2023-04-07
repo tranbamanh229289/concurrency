@@ -4,4 +4,3 @@
 - Concurency
 - Chat client server TCP Socket
 - RPC, gRPC
-- Context package
