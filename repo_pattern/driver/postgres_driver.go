@@ -9,7 +9,7 @@ import (
 )
 
 type PostgresDB struct {
-	SQL *sql.DB
+	Db *sql.DB
 }
 
 var Postgres = &PostgresDB{}
@@ -22,6 +22,6 @@ func Connect(host, port, user, password, dbname string) (*PostgresDB) {
 		// panic(err)
 	}
 
-	Postgres.SQL = db
+	Postgres.Db = db
 	return Postgres
 }

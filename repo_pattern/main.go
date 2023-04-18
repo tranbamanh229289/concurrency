@@ -17,22 +17,22 @@ const (
 
 func main() {
 	db := driver.Connect(host, port, user, password, dbname)
-	err := db.SQL.Ping()
+	err := db.Db.Ping()
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println("Connect Success !")
 
-	userRepo := repoImpl.NewUserRepoImpl(db.SQL)
+	userRepo := repoImpl.NewUserRepoImpl(db.Db)
 	user1 := models.User{
-		Id: 1,
+		Id: 3,
 		Name: "Manh Tran",
 		Gender: "Male",
 		Email: "manhtran@gmail.com",
 	}
 
 	user2 := models.User{
-		Id: 2,
+		Id: 4,
 		Name: "Hue Le",
 		Gender: "Female",
 		Email: "huele@gmail.com",
